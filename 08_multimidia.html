@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabelas Avançadas e Multimídia</title>
+
+    <style>
+        /* === CSS GRID E MULTIMÍDIA === */
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+/* === TABELA COM GRID-LIKE STYLING === */
+
+.tabela-relatorio {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Esconde bordas quando os cantos se excedem */
+    border-radius: 8px;
+}
+
+.tabela-relatorio caption {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.tabela-relatorio th {
+    background-color: #34495e;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.tabela-relatorio td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.num-right {
+    text-align: right;
+    font-family: 'Courier New', monospace; /* Fonte monoespaçada para números */
+}
+
+.total-linha {
+    background-color: #f1ffcd;
+    color: #2c3e40;
+}
+
+.tabela-relatorio tfoot {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+/* === ESTILIZANDO MULTIMÍDIA === */
+
+/* Container para vídeos e áudio */
+video, iframe, audio {
+    display: block;
+    margin: 20px auto; /* Centraliza elementos */
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.video-local {
+    max-width: 100%;
+    height: auto;
+}
+
+.video-youtube {
+    border: 3px solid #ff0000;
+}
+
+/* Player de áudio customizado */
+.player-audio {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    padding: 5px;
+}
+
+/* Responsividade para vídeos */
+@media (max-width: 600px) {
+    iframe {
+        width: 100%;
+        height: 250px;
+    }
+}
+    </style>
+    <link rel="stylesheet" href="08_tab_multimidia.css">
+</head>
+
+<body>
+
+    <h1>Relatório de Vendas</h1>
+
+    <table class="tabela-relatório">
+
+        <caption>Vendas por Região - 2025</caption>
+
+        <thead>
+            <tr>
+                <th>Região</th>
+                <th>1º Tri</th>
+                <th>2º Tri</th>
+                <th>3º Tri</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Norte</td>
+                <td class="num-right">R$ 10.000</td>
+                <td class="num-right">R$ 12.000</td>
+                <td class="num-right">R$ 15.000</td>
+                <td class="num-right total-linha"><strong>R$ 37.000</strong></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total Geral</td>
+                <td class="num-right">R$ 10.000</td>
+                <td class="num-right">R$ 12.000</td>
+                <td class="num-right">R$ 15.000</td>
+                <td class="num-right">R$ 37.000</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+    <hr>
+
+    <h2>Inserindo vídeos locais</h2>
+
+    <video class="video-local" width="500" poster="assents/limoes-capa.png" controls>
+        <source src="assents/meu-video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+    </video>
+
+    <hr>
+
+    <h2>Inserindo vídeos do YouTube</h2>
+
+    <iframe class="video-youtube" width="560" height="315"
+        src="https://www.youtube.com/embed/eqUFcr1mI3Y"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <hr>
+
+    <h2>Vamos aprender a reproduzir áudios em HTML5.</h2>
+
+    <audio class="player-audio" preload="metadata" autoplay controls>
+        <source src="assents/happy-mistake.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+</body>
+</html>
